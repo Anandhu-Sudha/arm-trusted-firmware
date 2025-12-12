@@ -5,6 +5,7 @@
  */
 
 #include "k3-am62l3-stamp-2048-config.dtsi"
+#include "k3-am62l3-stamp-u-boot.dtsi"
 / {
         #address-cells = <2>;
         #size-cells = <2>;
