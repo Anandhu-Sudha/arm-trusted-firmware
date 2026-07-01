@@ -43,26 +43,10 @@ int ti_soc_init(void)
 		ERROR("Unable to communicate with the control firmware (%d)\n", ret);
 		return ret;
 	}
-	NOTICE("CALIXTO SYSTEMS TRUSTED FIRMWARE\n");
 	NOTICE("SYSFW ABI: %d.%d (firmware rev 0x%04x '%s')\n",
 	     version.abi_major, version.abi_minor,
 	     version.firmware_revision,
 	     version.firmware_description);
-	
-
-	ret = ti_sci_proc_request(PLAT_PROC_START_ID);
-	if (ret) {
-		ERROR("Unable to request host (%d)\n", ret);
-		return ret;
-	}
-
-	/* Enable ACP based coherency */
-	ret = ti_sci_proc_set_boot_ctrl(PLAT_PROC_START_ID, 0,
-									PROC_BOOT_CTRL_FLAG_ARMV8_AINACTS);
-	if (ret) {
-		ERROR("Unable to set boot control (%d)\n", ret);
-		return ret;
-	}
 
 	return 0;
 }

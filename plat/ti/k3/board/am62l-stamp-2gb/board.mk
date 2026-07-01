@@ -31,7 +31,7 @@ ifeq (${IMAGE_BL1}, 1)
 override ENABLE_PIE := 0
 endif
 
-DTB_FILE_NAME ?= k3-am62l-stamp-lpddr.dtb
+DTB_FILE_NAME ?= k3-am62l-stamp-2gb.dtb
 
 $(eval $(call MAKE_LIB_DIRS))
 

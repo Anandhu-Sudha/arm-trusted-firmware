@@ -1,19 +1,18 @@
 /dts-v1/;
 // SPDX-License-Identifier: GPL-2.0+
 /*
- * Copyright (C) Calixto Systems
+ * Copyright (C) 2020-2021 Texas Instruments Incorporated - https://www.ti.com/
  */
 
-#include "k3-am62l3-stamp-1024-config.dtsi"
-
+#include "k3-am62lx-stamp-2gb-config.dtsi"
 / {
         #address-cells = <2>;
         #size-cells = <2>;
 
         memory@80000000 {
                 device_type = "memory";
-                /* 1G RAM */
-                reg = <0x00000000 0x40000000 0x00000000 0x40000000>;
+                /* 2G RAM */
+                reg = <0x00000000 0x80000000 0x00000000 0x80000000>;
         };
 
 	memorycontroller: memorycontroller@f300000 {

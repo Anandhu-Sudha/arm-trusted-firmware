@@ -31,7 +31,7 @@ ifeq (${IMAGE_BL1}, 1)
 override ENABLE_PIE := 0
 endif
 
-DTB_FILE_NAME ?= k3-am62l-stamp-1024-ddr.dtb
+DTB_FILE_NAME ?= k3-am62l-stamp-256mb.dtb
 
 $(eval $(call MAKE_LIB_DIRS))
 
@@ -47,10 +47,10 @@ define add_asflag
 endef
 
 define add_dtb
-am62l_stamp_1024_bl1: bl1 dtbs
+am62l_stamp_lpddr_bl1: bl1 dtbs
 	./${PLAT_PATH}/common/drivers/lpddr4/am62l-bl1-dtb.sh ${BUILD_PLAT}/bl1/bl1.elf ${BUILD_PLAT}/fdts/$(DTB_FILE_NAME) ${BUILD_PLAT}/bl1.bin
 
-all: am62l_stamp_1024_bl1
+all: am62l_stamp_lpddr_bl1
 endef
 
 $(eval $(call add_tfcflag))
